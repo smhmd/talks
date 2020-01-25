@@ -27,6 +27,12 @@ whatsapp://send?text=Hello%2C%20World!
 mailto:contact@myname.com
 ```
 
+## Example
+
+\begin{center}
+https://en.film.com:443/main/func/search.php?text=manhattan\&genre=comedy\#cast
+\end{center}
+
 ## The Anatomy of a URL
 
 ### Example
@@ -48,6 +54,8 @@ mailto:contact@myname.com
 > - \colorbox{yellow!60}{Parameters/query/search} `&`-separated key/value pairs.
 
 > - \colorbox{purple!40}{Fragment/hash} Client side; does not get sent with the request; Browsers scroll to position.
+
+\*: Mandatory.
 
 ## URL Encoding
 
@@ -102,6 +110,8 @@ https://wa.me/15555555555?text=I%27d%20like%20to%20chat%20with%20you
 > - \colorbox{yellow!60}{location.search:} "?text=manhattan\&genre=comedy". Can be used in conjunction with `URLSearchParams`.
 
 > - \colorbox{purple!40}{location.hash:} "#cast".
+
+\*: not reactive.
 
 ## window.location Methods
 
