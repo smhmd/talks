@@ -127,5 +127,6 @@ https://wa.me/15555555555?text=I%27d%20like%20to%20chat%20with%20you
 
 
 \begin{center}
+you can find the slides at: \underline{https://github.com/aliveupstairs/talks}\\
 \Huge{Thank You}
 \end{center}
