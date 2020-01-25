@@ -1,0 +1,131 @@
+---
+title: URLs in JavaScript
+author: Mohamed Maghraoui (@aliveupstairs)
+output:
+  beamer_presentation:
+    toc: true
+    slide_level: 2
+    theme: metropolis
+    latex_engine: xelatex
+classoption: "aspectratio=169"
+header-includes:
+      - \usepackage{xcolor}
+      - \usepackage{tabularx}
+---
+
+# What is a URL
+
+## Examples of URLs
+
+<!-- these URLs can be typed into your browser's address bar to tell it to load the associated page (resource) -->
+
+```
+http://www.example.com/index.html
+https://github.com/
+ftp://internet.address.edu/file/path/file.txt
+whatsapp://send?text=Hello%2C%20World!
+```
+
+## The Anatomy of a URL
+
+\colorbox{blue!40}{\strut https://}\colorbox{red!40}{\strut en.film.com}\colorbox{orange!40}{\strut :443}\colorbox{teal!40}{\strut /main/search.php}\colorbox{yellow!60}{\strut ?text=manhattan\&genre=comedy}\colorbox{purple!40}{\strut \#cast}
+
+> - \colorbox{blue!40}{Protocol/scheme\text{*}} Examples: `http`, `https`, `ftp`, `mailto`, `tel`, `chrome`. <!-- the last protocol is custom -->
+
+> - \colorbox{red!40}{Domain name\text{*}} An IP address can be used instead.
+
+> - \colorbox{orange!40}{Port} Default `:80` for http. default `:443` for https.
+
+> - \colorbox{teal!40}{Path} Traditionally physical; now, mostly an abstraction by web servers.
+
+> - \colorbox{yellow!60}{Parameters/query/search} `&` separated key/value pairs.
+
+> - \colorbox{purple!40}{Fragment/hash} Client side; does not get sent with the request; Browsers scroll to position.
+
+## URL Encoding
+
+\begin{tabularx}{\textwidth}{ |X|X|X|X|X|X|X|X|X|X| }
+  \hline
+   space & ! & \# & \$ & \% & \& & ' & ( & ) & *  \\
+  \hline
+   \%20 & \%21 & \%23 & \%24 & \%25 & \%26 & \%27 & \%28 & \%29 & \%2A \\
+  \hline
+\end{tabularx}
+
+\begin{tabularx}{\textwidth}{ |X|X|X|X|X|X|X|X|X|X| }
+  \hline
+   + & , & / & : & ; & = & ? & @ & [ & ] \\
+  \hline
+   \%2B & \%2C & \%2F & \%3A & \%3B & \%3D & \%3F & \%40 & \%5B & \%5D \\
+  \hline
+\end{tabularx}
+
+Example:
+
+```
+https://wa.me/15555555555?text=I%27d%20like%20to%20chat%20with%20you
+```
+
+# The location API
+
+## `window.location` Properties
+
+\colorbox{blue!40}{\strut https://}\colorbox{red!40}{\strut en.film.com}\colorbox{orange!40}{\strut :80}\colorbox{teal!40}{\strut /1979}\colorbox{yellow!60}{\strut ?text=manhattan\&genre=comedy}\colorbox{purple!40}{\strut \#cast}
+
+> - \colorbox{blue!40}{location.protocol:} "https:".
+
+> - \colorbox{red!40}{location.hostname:} "en.film.com".
+
+> - \colorbox{orange!40}{location.port:} "80".
+
+> - \colorbox{teal!40}{location.path\text{*}:} "/1979".
+
+> - \colorbox{yellow!60}{location.search:} "?text=manhattan\&genre=comedy". Can be used in conjunction with `URLSearchParams`.
+
+> - \colorbox{purple!40}{location.hash:} "#cast".
+
+## window.location Methods
+
+> - `location.assign()`: load a URL.
+
+> - `location.reload(Boolean)`: reload from server or cache based on boolean passed.
+
+> - `location.replace()`: similar to .assign but without history.
+
+# Let's code a redirection browser extension
+
+## Dependencies
+
+- Tampermonkey extension: [\underline{chromium}](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo), [\underline{firefox}](https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/).
+- JavaScript.
+
+## Script code
+
+```js
+// ==UserScript==
+// @name         Wikipedia mobile
+// @description  Redirect to mobile version of wikipedia
+// @match        https://en.wikipedia.org/*
+// @run-at       document-start
+// ==/UserScript==
+
+(function() {
+    'use strict';
+     if (location.hostname === 'en.wikipedia.org') {
+       location.hostname = 'en.m.wikipedia.org';
+     }
+})();
+```
+
+##
+
+\begin{center}
+\Huge{Do you wish to add anything?}
+\end{center}
+
+##
+
+
+\begin{center}
+\Huge{Thank You}
+\end{center}
