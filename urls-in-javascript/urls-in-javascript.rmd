@@ -24,11 +24,18 @@ http://www.example.com/index.html
 https://github.com/
 ftp://internet.address.edu/file/path/file.txt
 whatsapp://send?text=Hello%2C%20World!
+mailto:contact@myname.com
 ```
 
 ## The Anatomy of a URL
 
-\colorbox{blue!40}{\strut https://}\colorbox{red!40}{\strut en.film.com}\colorbox{orange!40}{\strut :443}\colorbox{teal!40}{\strut /main/search.php}\colorbox{yellow!60}{\strut ?text=manhattan\&genre=comedy}\colorbox{purple!40}{\strut \#cast}
+### Example
+
+\begin{center}
+  \colorbox{blue!40}{\strut https://}\colorbox{red!40}{\strut en.film.com}\colorbox{orange!40}{\strut :443}\colorbox{teal!40}{\strut /main/func/search.php}\colorbox{yellow!60}{\strut ?text=manhattan\&genre=comedy}\colorbox{purple!40}{\strut \#cast}
+\end{center}
+
+### Explaination
 
 > - \colorbox{blue!40}{Protocol/scheme\text{*}} Examples: `http`, `https`, `ftp`, `mailto`, `tel`, `chrome`. <!-- the last protocol is custom -->
 
@@ -38,11 +45,13 @@ whatsapp://send?text=Hello%2C%20World!
 
 > - \colorbox{teal!40}{Path} Traditionally physical; now, mostly an abstraction by web servers.
 
-> - \colorbox{yellow!60}{Parameters/query/search} `&` separated key/value pairs.
+> - \colorbox{yellow!60}{Parameters/query/search} `&`-separated key/value pairs.
 
 > - \colorbox{purple!40}{Fragment/hash} Client side; does not get sent with the request; Browsers scroll to position.
 
 ## URL Encoding
+
+### Encoding table
 
 \begin{tabularx}{\textwidth}{ |X|X|X|X|X|X|X|X|X|X| }
   \hline
@@ -60,6 +69,10 @@ whatsapp://send?text=Hello%2C%20World!
   \hline
 \end{tabularx}
 
+### Use
+
+`encodeURI()`.
+
 Example:
 
 ```
@@ -70,7 +83,13 @@ https://wa.me/15555555555?text=I%27d%20like%20to%20chat%20with%20you
 
 ## `window.location` Properties
 
-\colorbox{blue!40}{\strut https://}\colorbox{red!40}{\strut en.film.com}\colorbox{orange!40}{\strut :80}\colorbox{teal!40}{\strut /1979}\colorbox{yellow!60}{\strut ?text=manhattan\&genre=comedy}\colorbox{purple!40}{\strut \#cast}
+### Example
+
+\begin{center}
+  \colorbox{blue!40}{\strut http://}\colorbox{red!40}{\strut en.film.com}\colorbox{orange!40}{\strut :80}\colorbox{teal!40}{\strut /1979}\colorbox{yellow!60}{\strut ?text=manhattan\&genre=comedy}\colorbox{purple!40}{\strut \#cast}
+\end{center}
+
+### Properties
 
 > - \colorbox{blue!40}{location.protocol:} "https:".
 
@@ -124,7 +143,6 @@ https://wa.me/15555555555?text=I%27d%20like%20to%20chat%20with%20you
 \end{center}
 
 ##
-
 
 \begin{center}
 you can find the slides at: \underline{https://github.com/aliveupstairs/talks}\\
