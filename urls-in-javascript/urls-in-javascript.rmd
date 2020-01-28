@@ -79,7 +79,7 @@ https://en.film.com:443/main/func/search.php?text=manhattan\&genre=comedy\#cast
 
 ### Use
 
-`encodeURI()`.
+`encodeURIComponent()`.
 
 Example:
 
