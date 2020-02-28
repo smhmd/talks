@@ -1,0 +1,12 @@
+body,
+html,
+eg-slide-content,
+eg-slide {
+  min-height: 100vh;
+}
+
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
