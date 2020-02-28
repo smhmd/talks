@@ -1,5 +1,7 @@
 # The What
+
 SVG is
+
 - XML-based format. (it's not HTML).
 - Searchable/indexable, scalable, responsive, interactive, programmable, performant, and accessible.
 - Dates back to the 90's (submission to W3C was in 1999).
@@ -14,24 +16,27 @@ SVG is
 - XML thrives to be mixed (XHTML, HTML, SVG, MathML, etc.)
 - User agent uses namespaces to to distinguish between XML dialects.
 
-
 ```css
 @namespace url(http://www.w3.org/1999/xhtml);
 @namespace svg url(http://www.w3.org/2000/svg);
 
 /* This matches all XHTML <a> elements, as XHTML is the default unprefixed namespace */
-a {}
+a {
+}
 
 /* This matches all SVG <a> elements */
-svg|a {}
+svg|a {
+}
 
 /* This matches both XHTML and SVG <a> elements */
-*|a {}
+*|a {
+}
 ```
 
 <!--https://stackoverflow.com/questions/18467982/are-svg-parameters-such-as-xmlns-and-version-needed-->
+
 - `version` is ignored by all user agents.
-- `xmlnx` is required for `image/svg+xml`, but not required by `text/html`. (`application/octet-stream` will be downloaded)
+- `xmlns` is required for `image/svg+xml`, but not required by `text/html`. (`application/octet-stream` will be downloaded)
 
 ```css
 .bg {
@@ -46,10 +51,15 @@ svg|a {}
 ## `img` Tag
 
 ```html
-<img src="rabatjs.svg" alt="Coolest meetup" onerror="this.onerror=null; this.src='image.png'">
+<img
+  src="rabatjs.svg"
+  alt="Coolest meetup"
+  onerror="this.onerror=null; this.src='image.png'"
+/>
 ```
 
 ### Browser support
+
 https://caniuse.com/#feat=svg-img
 
 ## CSS background
@@ -64,6 +74,7 @@ background-size: 100px 82px;
 ```
 
 ### Browser support
+
 https://caniuse.com/#feat=svg-css
 
 ## Inline SVG
@@ -77,6 +88,7 @@ https://caniuse.com/#feat=svg-css
 ```
 
 ### Browser support
+
 https://caniuse.com/#feat=svg-html5
 
 # Basic Shapes
@@ -88,14 +100,7 @@ The `rect` element defines a rectangle.
 #### Example
 
 ```html
-<rect
-  x="10"
-  y="20"
-  width="50"
-  height="75"
-  rx="15"
-  ry="0"
-/>
+<rect x="10" y="20" width="50" height="75" rx="15" ry="0" />
 ```
 
 ## Circle
@@ -103,7 +108,7 @@ The `rect` element defines a rectangle.
 #### Example
 
 ```html
-<circle cx="25" cy="75" r="20"/>
+<circle cx="25" cy="75" r="20" />
 ```
 
 ## Ellipse
@@ -111,7 +116,7 @@ The `rect` element defines a rectangle.
 #### Example
 
 ```html
-<ellipse cx="75" cy="75" rx="20" ry="5"/>
+<ellipse cx="75" cy="75" rx="20" ry="5" />
 ```
 
 ## Line
@@ -119,7 +124,7 @@ The `rect` element defines a rectangle.
 #### Example
 
 ```html
-<line x1="10" x2="50" y1="110" y2="150"/>
+<line x1="10" x2="50" y1="110" y2="150" />
 ```
 
 ## Polyline
@@ -129,7 +134,11 @@ Coordinates pairs that define x and y points. If the last coordinate is odd, it 
 #### Example
 
 ```html
-<polyline points="60, 110 65, 120 70, 115 75, 130 80, 125 85, 140 90, 135 95, 150 100, 145" fill="none" stroke="black" />
+<polyline
+  points="60, 110 65, 120 70, 115 75, 130 80, 125 85, 140 90, 135 95, 150 100, 145"
+  fill="none"
+  stroke="black"
+/>
 ```
 
 ## Polygon
@@ -137,7 +146,9 @@ Coordinates pairs that define x and y points. If the last coordinate is odd, it 
 #### Example
 
 ```html
-<polygon points="50, 160 55, 180 70, 180 60, 190 65, 205 50, 195 35, 205 40, 190 30, 180 45, 180"/>
+<polygon
+  points="50, 160 55, 180 70, 180 60, 190 65, 205 50, 195 35, 205 40, 190 30, 180 45, 180"
+/>
 ```
 
 # Path Element
@@ -150,6 +161,7 @@ Commas vs Spaces: can be used interchangeably.
 ```xml
 <path d="<letter> <point(s) (positive or negative values)>" />"
 ```
+
 <!--Note to self: `(M,m) ### Syntax` sounds better-->
 
 ## Line Commands
@@ -262,7 +274,9 @@ Q xp,yp x,y
   <path d="M 10 10 200 200 Q 10 200 10 10 z" stroke="black" stroke-width="5" fill="none" stroke-linejoin="arcs"/>
 </svg>
 ```
+
 Similar to `S,s` the `T,t` command inherits its point from the last command
+
 ```
 T x, y
 ```
@@ -294,6 +308,4 @@ A rx ry x-axis-rotation large-arc-flag sweep-flag x y
 
 https://css-tricks.com/a-trick-that-makes-drawing-svg-lines-way-easier/
 
-
 # Fallback
-
