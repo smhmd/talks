@@ -23,9 +23,14 @@
     h2 Scalable
       
   slide(:keyboardNavigation="false" :mouseNavigation="false")
-    .grid.grid-cols-2.justify-center.items-center
-      codemirror.shadow-2xl.m-0(v-model="svgcode" :options="htmlOptions" style="font-size: 1.1rem")
-      .mx-auto(v-html="svgcode")
+    SvgPanZoom.border.border-solid.border-white(
+          style="width: 500px; height: 500px;"
+          :zoomEnabled="true"
+          :fit="false"
+          :center="true"
+      )
+      svg( width="100%" height="100%" xmlns='http://www.w3.org/2000/svg' fill='#0f6d5a' fill-rule='evenodd' viewBox='0 0 847 847')
+        path(d='M210 341c81-75 225-161 263 1 41-143 204-177 329-132-4 121-68 198-173 252 42 9 103-20 126-56 124 240-392 449-426 11-4-41-79-55-119-76zm-12 61c-11-12 8-29 19-16 0 0 77 85 8 176-11 13-31-2-21-16 57-74-6-143-6-144zM70 442c5-45 52-75 100-85 4-1 7 1 6 4-1 45-49 82-100 86-4 0-6-2-6-5zM48 270c42-15 90 14 119 54 2 3 2 6-1 7-41 18-96-10-120-54-2-3-1-6 2-7zm125-95c36 27 38 83 22 130-2 3-5 4-7 3-38-25-45-85-21-131 1-2 4-3 6-2zm204 125c20 0 20 31 0 31-21 0-21-31 0-31z')
 
   slide
     h1 Responsive
@@ -65,6 +70,7 @@
 
 <script>
 import { Slideshow } from 'eagle.js';
+
 import { codemirror } from 'vue-codemirror';
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/base16-dark.css';
@@ -72,10 +78,13 @@ import 'codemirror/mode/htmlembedded/htmlembedded.js';
 
 import sli from './components/steppedlistitem';
 
+import SvgPanZoom from 'vue-svg-pan-zoom';
+
 export default {
   components: {
     codemirror,
     sli,
+    SvgPanZoom,
   },
   data() {
     return {
