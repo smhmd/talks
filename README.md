@@ -1,5 +1,3 @@
 # talks
 
-A repo of my presentations in dev and uni written in Rmarkdown and LaTeX.
-
-![screenshot of my current workflow](./screenshot.png)
+A repo of my presentations.
