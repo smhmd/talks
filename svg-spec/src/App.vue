@@ -7,7 +7,7 @@
 
   slide
     h1 What is SVG?
-    
+
   slide.px-5(:steps='4')
     ul.max-w-4xl
       sli(:step="step" :stepNum="1") #[b XML-based] format for graphics. (SVG is #[b.text-red-700 not] HTML.)
@@ -15,13 +15,13 @@
       sli(:step="step" :stepNum="3") #[b SVG] is a #[b vector] graphics format as opposed to a #[b raster] (Bitmap) format.
       sli(:step="step" :stepNum="4") Currently, SVG #[b 1.1] #[i 2nd edition] is in use.
 
-      
+
   slide
     h1 Why use SVG?
-    
+
   slide
     h2 Scalable
-      
+
   slide(:keyboardNavigation="false" :mouseNavigation="false")
     SvgPanZoom.border.border-solid.border-white(
           style="width: 500px; height: 500px;"
@@ -45,7 +45,7 @@
 
   slide
     h2 Interactive
-  
+
   slide.w-full.h-full.flex.justify-center.items-center
     img(src="./assets/interactive-svg.gif")
   slide
@@ -61,10 +61,10 @@
 
   slide
     h1 How to use SVG
-  
+
   slide(:keyboardNavigation="false" :mouseNavigation="false")
     codemirror.shadow-2xl(:value="htmlSrcSVG" :options="htmlOptions")
-  
+
   slide(:keyboardNavigation="false" :mouseNavigation="false")
     codemirror.shadow-2xl(:value="csssrcSVG" :options="htmlOptions")
 
@@ -73,16 +73,16 @@
 
   slide
     h1 Browser Support
-  
+
   slide.w-full.h-full.flex.justify-center.items-center
     img(src="./assets/browser-support.png")
 
   slide
     h1 SVG Syntax
-  
+
   slide
     h2 Basic Shapes
-  
+
   slide
     h3 #[code rect]
 
@@ -124,18 +124,18 @@
       .self-start(v-html="SVGLine")
   slide
     h3 #[code polyline] and #[code polygon]
-    
+
   slide(:keyboardNavigation="false" :mouseNavigation="false")
     .grid.grid-cols-2.gap-2.lg_gap-6.justify-center.items-center.max-w-6xl
       codemirror.shadow-2xl(v-model="SVGPoly" :options="CodeOptions")
       .self-start(v-html="SVGPoly")
-  
+
   slide
     h2 #[code path] Element
-  
+
   slide(:keyboardNavigation="false" :mouseNavigation="false")
     codemirror.shadow-2xl(value="\n\n\n\n\n\n\n<path d='commandLetter arguments(positive or negative values)' />" :options="htmlOptions")
-  
+
   slide
     h3 Line Commands
 
@@ -170,8 +170,8 @@
 
   slide
     h3 Cubic Curve #[code (C, c)]
-    p Syntax: C x1 y1, x2 y2, x y 
-  
+    p Syntax: C x1 y1, x2 y2, x y
+
   slide(:keyboardNavigation="false" :mouseNavigation="false")
     .grid.grid-cols-2.gap-2.lg_gap-6.justify-center.items-center.max-w-6xl
       codemirror.shadow-2xl(v-model="PathC" :options="CodeOptions")
@@ -219,16 +219,16 @@
   slide
     h3 Smooth Cubic Curve #[code (S, s)]
     p Syntax: S xp yp, x y
-  
+
   slide(:keyboardNavigation="false" :mouseNavigation="false")
     .grid.grid-cols-2.gap-2.lg_gap-6.justify-center.items-center.max-w-6xl
       codemirror.shadow-2xl(v-model="PathS" :options="CodeOptions")
       .self-start(v-html="PathS")
-  
+
   slide
     h3 Quadratic Curve #[code (Q, q)]
     p Syntax: Q xp yp, x y
-  
+
   slide(:keyboardNavigation="false" :mouseNavigation="false")
     .grid.grid-cols-2.gap-2.lg_gap-6.justify-center.items-center.max-w-6xl
       codemirror.shadow-2xl(v-model="PathQ" :options="CodeOptions")
@@ -237,7 +237,7 @@
   slide
     h3 Quadratic Curve #[code (T, t)]
     p Syntax: T x y
-  
+
   slide(:keyboardNavigation="false" :mouseNavigation="false")
     .grid.grid-cols-2.gap-2.lg_gap-6.justify-center.items-center.max-w-6xl
       codemirror.shadow-2xl(v-model="PathT" :options="CodeOptions")
@@ -245,22 +245,22 @@
 
   slide
     h3 Arcs
-    p A rx ry x-axis-rotation large-arc-flag sweep-flag x y  
+    p A rx ry x-axis-rotation large-arc-flag sweep-flag x y
 
   slide(:keyboardNavigation="false" :mouseNavigation="false")
     .grid.grid-cols-2.gap-2.lg_gap-6.justify-center.items-center.max-w-6xl
       codemirror.shadow-2xl(v-model="PathA" :options="CodeOptions")
       .self-start(v-html="PathA")
-  
+
   slide
     h2 ViewBox
-  
+
 
   slide(:keyboardNavigation="false" :mouseNavigation="false")
     .grid.grid-cols-2.gap-2.lg_gap-6.justify-center.items-center.max-w-6xl
       codemirror.shadow-2xl(v-model="viewBox" :options="CodeOptions")
       .self-start(v-html="viewBox")
-  
+
   slide
     h2 Structural elements
 
@@ -281,17 +281,17 @@
       .self-start(v-html="StructureDefsUse")
   slide
     h2 Namesapces
-  
+
   slide(:keyboardNavigation="false" :mouseNavigation="false")
     codemirror.shadow-2xl(:value="namespaces" :options="htmlOptions")
-      
+
   slide.px-5(:steps='4')
     ul.max-w-4xl
       sli(:step="step" :stepNum="1") less of a URL, more of unique string.
       sli(:step="step" :stepNum="2") XML thrives to be mixed (XHTML, HTML, SVG, MathML, etc.)
       sli(:step="step" :stepNum="3") User agent uses namespaces to to distinguish between XML dialects.
       sli(:step="step" :stepNum="4") version is ignored by all user agents.
-  
+
   slide
     h2 Animation
 
@@ -299,10 +299,10 @@
     .grid.grid-cols-2.gap-2.lg_gap-6.justify-center.items-center.max-w-6xl
       codemirror.shadow-2xl(v-model="animateSVG" :options="CodeOptions")
       .self-start(v-html="animateSVG")
-    
+
   slide.w-full.h-full.flex.justify-center.items-center
     img(style="height: 40rem" src="./assets/path-stroke-animation.gif")
-  
+
   slide
     h1 Thank you
 </template>
@@ -346,7 +346,7 @@ export default {
       PathS: `<svg width="100%" height="300" style="border: 1px dashed">\n\t<path d="M 10 80\n\t\t\t\t\t C 40 10\n\t\t\t\t\t 65 10\n\t\t\t\t\t 95 80\n\t\t\t\t\t S 150 150\n\t\t\t\t\t 180 80"\n\t\t\t\tstroke="white"\n\t\t\t\tstroke-width="5"\n\t\t\t\tfill="transparent"/>\n</svg>`,
       PathQ: `<svg width="100%" height="300" style="border: 1px dashed">\n\t<path d="M 50 50\n\t\t\t\t\t Q 50 200\n\t\t\t\t\t 200 200"\n\t\t\t\tstroke="white"\n\t\t\t\tstroke-width="5" \n\t\t\t\tfill="transparent"/>\n\n\t<!--<polyline points="50 50\n\t\t\t\t\t\t\t\t\t\t50 200\n\t\t\t\t\t\t\t\t\t\t200 200"\n\t\t\t\t\t\tstroke="white"\n\t\t\t\t\t\tstroke-dasharray="5"\n\t\t\t\t\t\tfill="none"/>\t\n\t<circle cx="50" cy="200" r="2" fill="red"/>-->\n</svg>`,
       PathT: `<svg width="100%" height="300" style="border: 1px dashed">\n\t<path d="M 10 150\n\t\t\t\t\t q 50 50\n\t\t\t\t\t 100 0\n\t\t\t\t\t t 100 0"\n\t\t\t\tstroke="white"\n\t\t\t\tstroke-width="5" \n\t\t\t\tfill="transparent"/>\n\n\t<polyline points="10 150\n\t\t\t\t\t\t\t\t\t\t60 200\n\t\t\t\t\t\t\t\t\t\t110 150"\n\t\t\t\t\t\tstroke="white"\n\t\t\t\t\t\tstroke-dasharray="5"\n\t\t\t\t\t\tfill="none"/>\t\n\t<circle cx="60" cy="200" r="2" fill="red"/>\n</svg>`,
-      PathA: `<svg width="100%" height="300" style="border: 1px dashed">\n\t<path d="M 200 80\n\t\t\t\t\t a 45 45, 0, 1, 0, 50 50\n\t\t\t\t\t v -50\n\t\t\t\t\t z"\n\t\t\t\tfill="none"\n\t\t\t\tstroke="white"\n\t\t\t\tstroke-width="2"\n\t/>\n</svg>\n\n<!-- A rx ry x-axis-rotation large-arc-flag sweep-flag x y -->`,
+      PathA: `<svg width="100%" height="300" style="border: 1px dashed">\n\t<path d="M 200 80\n\t\t\t\t\t a 50 50, 0, 1, 0, 50 50\n\t\t\t\t\t v -50\n\t\t\t\t\t z"\n\t\t\t\tfill="none"\n\t\t\t\tstroke="white"\n\t\t\t\tstroke-width="2"\n\t/>\n</svg>\n\n<!-- A rx ry x-axis-rotation large-arc-flag sweep-flag x y -->`,
       viewBox: `<svg width="500"\n\t\t height="400"\n\t\t style="border: 1px dashed"\n\t\t viewBox="0 0 500 400">\n\t<rect x="0"\n\t\t\t\ty="0"\n\t\t\t\twidth="100"\n\t\t\t\theight="150"\n\t\t\t\tfill="white"/>\n</svg>`,
       StructureG: `<svg width="100%" height="300" style="border: 1px dashed">\n\t<g fill="none"\n\t\t stroke="seagreen"\n\t\t stroke-width="5">\n\t\t<circle cx="40" cy="40" r="25" />\n\t\t<circle cx="60" cy="60" r="25" />\n\t\t<circle cx="80" cy="150"r="25" />\n\t</g>\n</svg>`,
       StructureDefsUse: `<svg width="100%" height="300" style="border: 1px dashed">\n\t<polygon points="100,10 40,198 190,78 10,78 160,198"/>\n</svg>`,
